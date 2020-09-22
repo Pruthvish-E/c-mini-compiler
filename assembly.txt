@@ -1,0 +1,91 @@
+add:
+add temp , a , b
+lw temp , R0
+add temp , R0 , c
+lw temp , R1
+sw R1 , fr
+lw fp , pc
+main:
+add temp , a , 13
+lw temp , R2
+sw i , R2
+sw i , 0
+L0:
+lt temp , i , 10
+lw temp , R5
+beq R5, 0 , L1
+add temp , a , 12
+lw temp , R6
+sw a , R6
+mul temp , 23 , h
+lw temp , R7
+sw b , R7
+sw j , i
+L1:
+lt temp , j , 10
+lw temp , R10
+beq R10, 0 , L2
+sw k , R10
+mul temp , j , 10
+lw temp , R11
+sw j , R11
+b L1
+L2:
+L3:
+div temp , a , 0
+lw temp , R12
+sw inf , R12
+sw w , inf
+sw k , w
+sw ala , k
+sw s , ala
+sw s , R12
+sw t13 , 36
+add temp , R13 , 9
+lw temp , R14
+sw a , R14
+sw t16 , 21
+sw b , R16
+L4:
+sub temp , a , 1
+lw temp , R18
+sw a , R18
+b L4
+L5:
+lt temp , a , b
+lw temp , R19
+beq R19, 0 , L6
+add temp , a , 1
+lw temp , R20
+sw a , R20
+b L7
+L6:
+sub temp , b , 1
+lw temp , R22
+sw b , R22
+sw t22 , a
+L7:
+gt temp , a , b
+lw temp , R23
+beq R23, 0 , L8
+sw t24 , R22
+b L9
+L8:
+sw t24 , b
+L9:
+sw a , R23
+sw t26 , 48
+div temp , R26 , 2
+lw temp , R27
+add temp , R27 , 1
+lw temp , R28
+sw a , R28
+sw a , sp(0)
+sw b , sp(1)
+sw c , sp(2)
+sw pc , fp
+call add , 3
+sw wo , fr
+
+
+.WORD temp , i , a , b , j , k , inf , w , ala , s , t13 , t16 , t22 , t24 , t26 , c , wo
